@@ -1,0 +1,56 @@
+<template>
+  
+    <!-- lightning button for open modal window -->
+    <div class="text-center">
+    <lightning-button variant="brand"
+       label="Proceed To Payment!"
+       title="Proceed To Payment!"
+       onclick={openModal}
+       class="slds-m-left_x-small">
+    </lightning-button>
+    </div>
+    <!--Use template if:true to display/hide popup based on isModalOpen value--> 
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">OTP Verification</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div style="display: flex; justify-content: center; align-items: center; margin: auto;">
+                    <lightning-card>
+                        <div class="slds-p-around_medium">
+                            <!-- <lightning-input type="email" label="Enter your email" value={email} onchange={handleEmailChange}></lightning-input> -->
+                            <!-- <br /><br /> -->
+                            <p>An OTP will be sent to your {email} mail Id. Please check the spam folder as well!</p>
+                            <br>
+                            <div class="text-center"><lightning-button variant="brand" title="Generate OTP" onclick={handleGenerateOTP} disabled={genButtonDisabled}  label={genButtonLabel}></lightning-button></div>
+                            <br />
+                            <lightning-input type="number" label="Enter OTP" value={otp} onchange={handleOTPChange}></lightning-input>
+                            <br /><br />
+                            <div class="text-center"><lightning-button variant="brand" label="Submit OTP" title="Submit OTP" onclick={handleCheckOTP} disabled={checkdisabled} ></lightning-button></div>
+                        </div>
+                    </lightning-card>
+                    </div>
+
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <!-- <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={submitDetails} title="OK">OK</button>
+                </footer> -->
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+ </template>

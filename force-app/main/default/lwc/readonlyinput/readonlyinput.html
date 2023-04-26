@@ -1,0 +1,12 @@
+<template>
+    <div class="container">
+        <label>{label}</label>
+        <div class="input-container">
+            <input type="text" value={value} readonly></input>
+            <div class="buttons">
+                <button onclick={handleDecrease}>-</button>
+                <button onclick={handleIncrease}>+</button>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,29 @@
+<template>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <!-- <th>Item Id</th> -->
+            <th>Name</th>
+            <th>Pizza Name</th>
+            <th>Pizza Price</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={orderLineItems} for:item="item">
+            <tr key={item.Id}>
+              <!-- <td>{item.Id}</td> -->
+              <td>{item.Name}</td>
+              <td>{item.Pizza__r.Name}</td>
+              <td>₹{item.Pizza__r.Price__c}</td>
+              <td>× {item.Quantity__c}</td>
+              <td>₹{item.Amount__c}</td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+  </template>
+  

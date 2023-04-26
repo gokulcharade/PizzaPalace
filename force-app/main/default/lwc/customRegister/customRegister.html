@@ -1,0 +1,27 @@
+<template>
+    <div class="container">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                <div class="content">
+                <lightning-input class="input" type="text" placeholder="Enter First Name" value={firstName} onchange={handleChangefirstName}></lightning-input>
+                <lightning-input class="input" type="text" placeholder="Enter Last Name" value={lastName} onchange={handleChangeLastName}></lightning-input>
+                <lightning-input class="input" type="email" placeholder="Enter Email" value={email} onchange={handleChangeEmail}></lightning-input>
+                <lightning-input class="input" type="tel" placeholder="Enter Phone" value={phone} onchange={handleChangePhone}></lightning-input>
+                </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12">
+                <div class="content">
+                    <lightning-input class="input" type="text" placeholder="Enter Street" value={deliverystreet} onchange={handleDeliveryStreet}></lightning-input>
+                    <lightning-input class="input" type="text" placeholder="Enter City" value={deliverycity} onchange={handleDeliveryCity}></lightning-input>
+                    <lightning-combobox style="width:150px;" placeholder="Select State" value={selectedState} options={stateOptions} onchange={handleChangeState}></lightning-combobox>
+                    <lightning-combobox style="width:150px;" class="mt-2" placeholder="Select Country" value={selectedCountry} options={countryOptions} onchange={handleChangeCountry}></lightning-combobox>
+                </div>
+            </div>
+                <lightning-button class="btn text-center" label="Register" variant="brand" onclick={handleRegister}></lightning-button>
+            
+        </div>
+            </div>
+        </div>
+    <!-- </div> -->
+</template>

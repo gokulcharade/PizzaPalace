@@ -1,0 +1,126 @@
+<template>
+  <div class="container-fluid">
+     <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+           <template for:each={pizzaInventoryList1} for:item="item">
+              <div key={item.Id} class="col-lg-12 col-md-12 col-sm-12 mb-4"
+                 style="padding-left: 0px !important; padding-right: 0px !important">
+                 <div class="card">
+                    <div class="card-header">
+                       <h4 class="card-title-outlet">{item.Pizza_Outlet__r.Name}</h4>
+                    </div>
+                    <div class="card-body">
+                       <div class="outlet-description">
+                          {item.Pizza_Outlet__r.Description__c}
+                       </div>
+                       <div class="outlet-info mt-3">
+                          <strong>Outlet Number:</strong> <br />
+                          {item.Pizza_Outlet__r.Name__c}
+                       </div>
+                       <div class="outlet-info">
+                          <strong>Outlet Address:</strong> <br />
+                          {item.Pizza_Outlet__r.Address__Street__s},
+                          {item.Pizza_Outlet__r.Address__City__s},
+                          {item.Pizza_Outlet__r.Address__PostalCode__s}
+                       </div>
+                       <div class="outlet-info mt-3">
+                          <strong>Outlet In Operation:</strong> <br />
+                          <template if:true={item.Pizza_Outlet__r.In_Operation__c}>
+                           <div style="color:green; font-weight:400">Outlet is Open!</div>
+                          </template>
+                          <template if:false={item.Pizza_Outlet__r.In_Operation__c}>
+                           <div style="color:red; font-weight:400">Outlet is Closed!</div>
+                          </template>
+                       </div>
+                       <div class="outlet-info">
+                          <strong>Outlet Opening Time: </strong><br /><lightning-formatted-date-time value={item.Pizza_Outlet__r.Opening_Timing__c} hour="2-digit" minute="2-digit" time-zone="UTC"
+                          ></lightning-formatted-date-time>
+                       </div>
+                       <div class="outlet-info">
+                          <strong>Outlet Closing Time:</strong><br><lightning-formatted-date-time value={item.Pizza_Outlet__r.Closing_Time__c} hour="2-digit" minute="2-digit" time-zone="UTC"
+                          ></lightning-formatted-date-time>
+                          <br />
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </template>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+           <iframe src={mapSrc} width="100%" height="92%" frameborder="0" class="map-frame mt-2"></iframe>
+        </div>
+     </div>
+  </div>
+  <div class="container-fluid">
+     <div class="row">
+        <div class="col-md-8">
+           <div class="row row-cols-1 row-cols-md-3 g-4">
+              <template for:each={pizzaInventoryList2} for:item="item">
+                 <div class="col mt-3 mb-3" key={item.Id}>
+                    <div class="card h-100" key={item.Id}>
+                       <img src={item.Pizza__r.Pizza_Image__c} class="card-img-top" />
+                       <div class="card-body">
+                          <h5 class="card-title">{item.Pizza__r.Name}</h5>
+                          <p class="card-text">{item.Pizza__r.Pizza_Description__c}</p>
+                          <p class="card-text">
+                             <small class="text-muted"><strong>Status:</strong> {item.Status__c}</small>
+                             <br />
+                             <small class="text-muted">{item.Pizza__r.Pizza_Category__c}</small>
+                          </p>
+                          <p class="card-text">
+                             <strong>₹{item.Pizza__r.Price__c}</strong>
+                          </p>
+                       </div>
+                       <div class="card-footer text-white clearfix">
+                           <div class="input-group float-start">
+                             <span class="input-group-text">Quantity:</span>
+                             <input type="number" class="form-control" onchange={handlequantity} min="0" max="10" value="select quantity"
+                                data-pizza-id={item.Pizza__r.Id} data-pizza-price={item.Pizza__r.Price__c} aria-label="Quantity"
+                                style="width: 70px" required/>
+                          </div>
+                          <lightning-button type="button" label="Add to Cart" class="slds-m-left_x-small mt-4 float-right"
+                             onclick={handleAddToCartClick} data-pizza-price={item.Pizza__r.Price__c}
+                             data-pizza-id={item.Pizza__r.Id} variant="success" style="color:white!important;"></lightning-button>
+                       </div>
+                    </div>
+                 </div>
+              </template>
+           </div>
+        </div>
+        <div class="col-md-4">
+          
+              <lightning-card title="Cart" class="my-3 card slds-card-wrapper">
+                 <!-- <template if:false={cartLineItems}>
+                  <div class="alert alert-danger">
+                     <strong>Hello user!</strong> Add some items to the Cart...
+                   </div>
+                 </template> -->
+                 <template if:true={cartLineItems}>
+                  <template for:each={cartLineItems} for:item="cartLineItem">
+                     <div class="card mb-3" key={cartLineItem}>
+                        <div class="card-body">
+                           
+                           <h5 class="card-title">{cartLineItem.Pizza__r.Name}</h5>
+                           <p class="card-text">
+                        
+                              Quantity: {cartLineItem.Quantity__c}
+                              <br />
+                              Unit Price: {cartLineItem.Singleunitprice__c}
+                           </p>
+                           <lightning-button type="button" label="Remove From Cart" class="slds-m-left_x-small mt-2 float-right"
+                              onclick={handleRemoveFromCart} key={cartLineItem} data-id={cartLineItem.Id}
+                              variant="destructive"></lightning-button>
+                        </div>
+                     </div>
+                  </template>
+                  <template if:false={cartLineItems}>
+                     <div class="alert alert-danger">
+                         <strong>Hello user!</strong> Add some items to the Cart...
+                     </div>
+                 </template>
+               </template>
+              </lightning-card>
+        </div>
+     </div>
+  </div>
+</template>

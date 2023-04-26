@@ -1,0 +1,78 @@
+.footer {
+    background: #000 !important;
+    color: white !important;
+}
+.footer .links ul {
+    list-style-type: none !important;
+}
+.footer .links li a {
+    color: white !important;
+    transition: color 0.2s !important;
+}
+.footer .links li a:hover {
+    text-decoration: none !important;
+    color: #ffffff !important;
+}
+.footer .about-company i {
+    font-size: 25px !important;
+}
+.footer .about-company a {
+    color: white;
+    transition: color 0.2s !important;
+}
+.footer .about-company a:hover {
+    color: #000000 !important;
+}
+.footer .location i {
+    font-size: 18px !important;
+}
+.footer .copyright p {
+    border-top: 1px solid rgba(255, 255, 255, .1) !important;
+}
+
+.footer {
+    font-family: Arial, sans-serif; /* Set the font family */
+    font-size: 14px; /* Set the font size */
+    margin-top: 50px; /* Set the top margin */
+    margin-bottom: 0; /* Remove the bottom margin */
+    padding-top: 50px; /* Set the top padding */
+    padding-bottom: 50px; /* Set the bottom padding */
+    background-color: #333; /* Set the background color */
+}
+.footer h1 {
+    color: #fff; /* Set the heading color */
+    font-weight: bold; /* Set the heading font weight */
+    margin-top: 0; /* Remove the top margin */
+    margin-bottom: 40px; /* Set the bottom margin */
+    font-size: 35px; /* Set the heading font size */
+}
+.footer h2,
+.footer h4 {
+    color: #fff; /* Set the heading color */
+    font-weight: bold; /* Set the heading font weight */
+    margin-top: 0; /* Remove the top margin */
+    margin-bottom: 20px; /* Set the bottom margin */
+    font-size: 20px; /* Set the heading font size */
+}
+.footer p {
+    color: #fff; /* Set the paragraph color */
+    font-size: 14px; /* Set the paragraph font size */
+    margin-top: 0; /* Remove the top margin */
+    margin-bottom: 20px; /* Set the bottom margin */
+}
+.footer ul li {
+    list-style: none; /* Remove the list bullet */
+    margin-top: 0; /* Remove the top margin */
+    margin-bottom: 10px; /* Set the bottom margin */
+}
+.footer ul li a {
+    color: #fff; /* Set the link color */
+    text-decoration: none; /* Remove the link underline */
+}
+.footer ul li a:hover {
+    text-decoration: underline; /* Add the link underline on hover */
+}
+.footer .location p {
+    margin-top: 0; /* Remove the top margin */
+    margin-bottom: 10px; /* Set the bottom margin */
+}

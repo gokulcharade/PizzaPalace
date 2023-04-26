@@ -1,0 +1,169 @@
+<template>
+    <!-- <ul>
+        <template for:each={pizzaInventoryList1} for:item="item">
+            
+            <li key={item.Id}>
+                <p>Status: {item.Status__c}</p>
+                <p>Outlet In Operation: {item.Pizza_Outlet__r.In_Operation__c}</p>
+                <p>Outlet ID: {item.Pizza_Outlet__r.Id}</p>
+                <p>Outlet Name: {item.Pizza_Outlet__r.Name}</p>
+                <p>Outlet Name Custom Field: {item.Pizza_Outlet__r.Name__c}</p>
+                <p>Outlet City: {item.Pizza_Outlet__r.Address__City__s}</p>
+                <p>Outlet Street: {item.Pizza_Outlet__r.Address__Street__s}</p>
+                <p>Outlet Postal Code: {item.Pizza_Outlet__r.Address__PostalCode__s}</p>
+                <p>Outlet State Code: {item.Pizza_Outlet__r.Address__StateCode__s}</p>
+                <p>Outlet Country Code: {item.Pizza_Outlet__r.Address__CountryCode__s}</p>
+                <p>Outlet Latitude: {item.Pizza_Outlet__r.Address__Latitude__s}</p>
+                <p>Outlet Longitude: {item.Pizza_Outlet__r.Address__Longitude__s}</p>
+                <p>Outlet Geocode Accuracy: {item.Pizza_Outlet__r.Address__GeocodeAccuracy__s}</p>
+                <p>Outlet Active: {item.Pizza_Outlet__r.Active__c}</p>
+                <p>Outlet Description: {item.Pizza_Outlet__r.Description__c}</p>
+                <p>Outlet Opening Timing: {item.Pizza_Outlet__r.Opening_Timing__c}</p>
+                <p>Outlet Closing Time: {item.Pizza_Outlet__r.Closing_Time__c}</p>
+            </li>
+        </template>
+    </ul> -->
+
+    <!-- <div class="container-fluid">
+        <div class="row">
+          <template for:each={pizzaInventoryList1} for:item="item">
+            <div key={item.Id} class="col-lg-12 col-md-12 col-sm-12 mb-4">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">{item.Pizza_Outlet__r.Name}</h4>
+                </div>
+                <div class="card-body">
+                  <p>Status: {item.Status__c}</p>
+                  <p>Outlet In Operation: {item.Pizza_Outlet__r.In_Operation__c}</p>
+                  <p>Outlet ID: {item.Pizza_Outlet__r.Id}</p>
+                  <p>Outlet Name Custom Field: {item.Pizza_Outlet__r.Name__c}</p>
+                  <p>Outlet City: {item.Pizza_Outlet__r.Address__City__s}</p>
+                  <p>Outlet Street: {item.Pizza_Outlet__r.Address__Street__s}</p>
+                  <p>Outlet Postal Code: {item.Pizza_Outlet__r.Address__PostalCode__s}</p>
+                  <p>Outlet State Code: {item.Pizza_Outlet__r.Address__StateCode__s}</p>
+                  <p>Outlet Country Code: {item.Pizza_Outlet__r.Address__CountryCode__s}</p>
+                  <p>Outlet Latitude: {item.Pizza_Outlet__r.Address__Latitude__s}</p>
+                  <p>Outlet Longitude: {item.Pizza_Outlet__r.Address__Longitude__s}</p>
+                  <p>Outlet Geocode Accuracy: {item.Pizza_Outlet__r.Address__GeocodeAccuracy__s}</p>
+                  <p>Outlet Active: {item.Pizza_Outlet__r.Active__c}</p>
+                  <p>Outlet Description: {item.Pizza_Outlet__r.Description__c}</p>
+                  <p>Outlet Opening Timing: {item.Pizza_Outlet__r.Opening_Timing__c}</p>
+                  <p>Outlet Closing Time: {item.Pizza_Outlet__r.Closing_Time__c}</p>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div> -->
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <template for:each={pizzaInventoryList1} for:item="item">
+              <div key={item.Id} class="col-lg-12 col-md-12 col-sm-12 mb-4" style="padding-left:0px!important; padding: right 0px!important;">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">{item.Pizza_Outlet__r.Name}</h4>
+                  </div>
+                  <div class="card-body">
+                    <p>Status: {item.Status__c}</p>
+                    <p>Outlet In Operation: {item.Pizza_Outlet__r.In_Operation__c}</p>
+                    <p>Outlet ID: {item.Pizza_Outlet__r.Id}</p>
+                    <p>Outlet Name Custom Field: {item.Pizza_Outlet__r.Name__c}</p>
+                    <p>Outlet City: {item.Pizza_Outlet__r.Address__City__s}</p>
+                    <p>Outlet Street: {item.Pizza_Outlet__r.Address__Street__s}</p>
+                    <p>Outlet Postal Code: {item.Pizza_Outlet__r.Address__PostalCode__s}</p>
+                    <p>Outlet State Code: {item.Pizza_Outlet__r.Address__StateCode__s}</p>
+                    <p>Outlet Country Code: {item.Pizza_Outlet__r.Address__CountryCode__s}</p>
+                    <p>Outlet Latitude: {item.Pizza_Outlet__r.Address__Latitude__s}</p>
+                    <p>Outlet Longitude: {item.Pizza_Outlet__r.Address__Longitude__s}</p>
+                    <p>Outlet Geocode Accuracy: {item.Pizza_Outlet__r.Address__GeocodeAccuracy__s}</p>
+                    <p>Outlet Active: {item.Pizza_Outlet__r.Active__c}</p>
+                    <p>Outlet Description: {item.Pizza_Outlet__r.Description__c}</p>
+                    <p>Outlet Opening Timing: {item.Pizza_Outlet__r.Opening_Timing__c}</p>
+                    <p>Outlet Closing Time: {item.Pizza_Outlet__r.Closing_Time__c}</p>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <iframe src={mapSrc} width="100%" height="420px" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+      
+        
+    <!-- <ul>
+        <template for:each={pizzaInventoryList2} for:item="item">
+            <li key={item.Id}>
+                <p>Pizza ID: {item.Pizza__r.Id}</p>
+                <p>Pizza Name: {item.Pizza__r.Name}</p>
+                <p>Pizza Description: {item.Pizza__r.Pizza_Description__c}</p>
+                <p>Pizza Image: {item.Pizza__r.Pizza_Image__c}</p>
+                <p>Pizza Price: {item.Pizza__r.Price__c}</p>
+                <p>Pizza Size: {item.Pizza__r.Size__c}</p>
+                <p>Pizza Category: {item.Pizza__r.Pizza_Category__c}</p>
+                <input type="number" onclick={handlequantity} min="0" max="10" value="0" data-pizza-id={item.Pizza__r.Id} style="width:50px;"></input>
+                <lightning-button onclick={handleAddToCartClick} label="Add to Cart" data-pizza-id={item.Pizza__r.Id}></lightning-button>
+            </li>   
+        </template>
+    </ul> -->
+    <!-- <template for:each={pizzaInventoryList2} for:item="item">
+        <div class="card" key={item.Id}>
+          <img src={item.Pizza__r.Pizza_Image__c} class="card-img-top" alt={item.Pizza__r.Name}>
+          <div class="card-body">
+            <h5 class="card-title">{item.Pizza__r.Name}</h5>
+            <p class="card-text">{item.Pizza__r.Pizza_Description__c}</p>
+            <p class="card-text"><small class="text-muted">{item.Pizza__r.Pizza_Category__c}</small></p>
+            <p class="card-text"><strong>${item.Pizza__r.Price__c}</strong></p>
+            <div class="input-group">
+              <span class="input-group-text">Quantity:</span>
+              <input type="number" class="form-control" onclick={handlequantity} min="0" max="10" value="0" data-pizza-id={item.Pizza__r.Id} aria-label="Quantity" style="width:70px;" >
+            </div>
+            <lightning-button type="button" label="Add to Cart" class="slds-button mt-3" onclick={handleAddToCartClick} data-pizza-id={item.Pizza__r.Id}></lightning-button>
+          </div>
+        </div>
+      </template> -->
+      <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <template for:each={pizzaInventoryList2} for:item="item">
+            <div class="col mt-3 mb-3" key={item.Id}>
+              <div class="card h-100" key={item.Id}>
+                <img src={item.Pizza__r.Pizza_Image__c} class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">{item.Pizza__r.Name}</h5>
+                  <p class="card-text">{item.Pizza__r.Pizza_Description__c}</p>
+                  <p class="card-text"><small class="text-muted">{item.Pizza__r.Pizza_Category__c}</small></p>
+                  <p class="card-text"><strong>₹{item.Pizza__r.Price__c}</strong></p>
+                </div>
+                <div class="card-footer text-white clearfix">
+                  <div class="input-group float-start">
+                    <span class="input-group-text">Quantity:</span>
+                    <input type="number" class="form-control" onchange={handlequantity} min="0" max="10" value="0" data-pizza-id={item.Pizza__r.Id} aria-label="Quantity" style="width:70px;" required>
+                  </div>
+                  <lightning-button type="button" label="Add to Cart" class="slds-button mt-3 float-right" onclick={handleAddToCartClick} data-pizza-id={item.Pizza__r.Id} variant="success"></lightning-button>
+                 
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+      
+
+     
+      
+      
+    <div class="clearfix">
+    <lightning-button label="Move to Cart" class="slds-button  mt-3 float-right" variant="success" title="Move to Cart" onclick={handleClick}></lightning-button>
+  </div>
+    <!-- <ul>
+        <template for:each={accounts} for:item="account">
+            <li key={account.Id}>{account.Name}</li>
+        </template>
+    </ul> -->
+
+    
+
+</template>

@@ -1,0 +1,54 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!-- 
+    Title: pizzaOutletsLocation.html
+    Description: This component displays pizza outlets based on pincode and navigates to menu page on outlet selection
+    Author: Gokul Charde Horizontal
+-->
+
+<template>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Find Pizza Outlets:</div>
+                    <div class="card-body text-center">
+                        <div class="row text-center">
+                                    <input type="text" placeholder="Enter Pincode" class="form-control" id="pincode" value={pincode} onchange={handleChange} >
+                        </div>
+                        <!-- sldsValidatorIgnoreNextLine -->
+                        <template if:true={pincode}>
+                            <div class="mt-3">
+                                <strong>Your Current Location Pincode is: {pincode}</strong>
+                            </div>
+                        </template>
+                        <button class="btn btn-dark mt-3 btn-sm" onclick={handleClick}> Find Outlets </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <template if:true={locations}>
+                <div class="col-md-8">
+                    <div class="row">
+                        <template for:each={locations} for:item="location">
+                            <div key={location.Id} class="col-md-6 mt-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{location.Pizza_Outlet__r.Name}</h5>
+                                        <p class="card-text">{location.Pizza_Outlet__r.Address__City__s}</p>
+                                        <!-- sldsValidatorIgnoreNextLine -->
+                                        <p class="card-text">{location.Pizza_Outlet__r.Address__Street__s}</p>
+                                        <button class="btn btn-secondary btn-sm btn-block mt-3" value={location.Pizza_Outlet__r.Id} onclick={handleMove}>Select Outlet</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </template>
+            
+        </div>
+    </div>
+</template>
+

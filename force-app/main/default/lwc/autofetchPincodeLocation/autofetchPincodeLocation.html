@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Location Pincode">
+        <div class="slds-m-around_medium">
+            <lightning-button label="Get Location" onclick={getLocation}></lightning-button>
+        </div>
+        <template if:true={pincode}>
+            <div class="slds-m-around_medium">
+                <p>Your current pincode is: {pincode}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,59 @@
+<!-- <template>
+    <lightning-card title="Cart Line Items">
+        <template if:true={cartLineItems}>
+            <template for:each={cartLineItems} for:item="cartLineItem">
+                <p key={cartLineItem}>
+                    <br>
+                    Item <br>
+                    Id : {cartLineItem.Id}
+                    Name: {cartLineItem.Pizza__r.Name}<br>
+                    Quantity: {cartLineItem.Quantity__c}<br>
+                    Unit Price: {cartLineItem.SingleItemAmount__c}<br>
+                </p>
+                <lightning-button variant="destructive" label="Remove from Cart" onclick={handleRemoveFromCart} key={cartLineItem} data-id={cartLineItem.Id}></lightning-button>
+            </template>
+        </template>
+        <lightning-button label="Back to Menu" title="Back to Menu" onclick={handleMenuClick}></lightning-button>
+     
+    </lightning-card>
+</template> -->
+
+<template>
+    <div class="container">
+      <lightning-card title="Cart Line Items" class="my-3">
+        <template if:true={cartLineItems}>
+          <template for:each={cartLineItems} for:item="cartLineItem">
+            <div class="card mb-3" key={cartLineItem}>
+              <div class="card-body">
+                <h5 class="card-title">Item</h5>
+                <p class="card-text">
+                  Id: {cartLineItem.Id}
+                  <br />
+                  Name: {cartLineItem.Pizza__r.Name}
+                  <br />
+                  Quantity: {cartLineItem.Quantity__c}
+                  <br />
+                  Unit Price: {cartLineItem.SingleItemAmount__c}
+                </p>
+                <lightning-button
+                  variant="destructive"
+                  label="Remove from Cart"
+                  onclick={handleRemoveFromCart}
+                  key={cartLineItem}
+                  data-id={cartLineItem.Id}
+                  class="btn btn-danger"
+                ></lightning-button>
+              </div>
+            </div>
+          </template>
+        </template>
+        <lightning-button
+          label="Back to Menu"
+          title="Back to Menu"
+          onclick={handleMenuClick}
+          class="btn btn-primary"
+        ></lightning-button>
+      </lightning-card>
+    </div>
+  </template>
+  

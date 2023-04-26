@@ -1,0 +1,15 @@
+<template>
+    <div>
+        <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+        <lightning-input class="my-custom-input" label={label} variant="readonly" type="number" value={value} min="1" max="10" readonly></lightning-input>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+        <lightning-button-group>
+            <lightning-button label="+" onclick={handleIncrease}></lightning-button>
+            <lightning-button label="-" onclick={handleDecrease}></lightning-button>
+        </lightning-button-group>
+    </div>
+    </div>
+    </div>
+</template>
